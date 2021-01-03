@@ -1,0 +1,41 @@
+{
+  "name": "dosarkz/laravel-paybox",
+  "description": "Acquiring system for accepting payments PayBox.money (4.0.0)",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "dosarkz",
+      "email": "ashenov.e@gmail.com"
+    }
+  ],
+  "version": "0.1.0",
+  "keywords": ["Laravel", "Paybox"],
+  "require": {
+    "php": "^7.1.3",
+    "ext-curl": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dosarkz\\Paybox\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Dosarkz\\Paybox\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Dosarkz\\Paybox\\PayboxServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  }
+}
