@@ -1,8 +1,7 @@
 {
   "name": "dosarkz/laravel-paybox",
   "description": "Acquiring system for accepting payments PayBox.money (4.0.0)",
-  "minimum-stability": "stable",
-  "license": "proprietary",
+  "minimum-stability": "dev",
   "authors": [
     {
       "name": "dosarkz",
