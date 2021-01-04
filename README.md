@@ -47,11 +47,11 @@ class OrdersController extends Controller
                "callbacks" => [
                     "result_url" => "string",
                     "check_url" => "string",
-                    "cancel_url" =>"string",
+                    "cancel_url" => "string",
                     "success_url" => "string",
                     "failure_url" => "string",
                     "back_url"   => "string",
-                    "capture_url" => string" 
+                    "capture_url" => "string" 
                ]
             ]
         ]);
