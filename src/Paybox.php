@@ -40,15 +40,6 @@ class Paybox
         $options['x_idempotency_key'] = $data['x_idempotency_key'];
         unset($data['x_idempotency_key']);
 
-        $data['options']['callbacks'] = [
-            'result_url' => $this->config['result_url'],
-            'check_url' => $this->config['check_url'],
-            'cancel_url' => $this->config['cancel_url'],
-            'success_url' => $this->config['success_url'],
-            'failure_url' => $this->config['failure_url'],
-            'back_url' => $this->config['back_url'],
-        ];
-
         $curl = new Curl($this->config['routes']['payments'], 'POST', $data, $options);
         return $curl->generate();
     }
