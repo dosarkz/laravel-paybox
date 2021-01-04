@@ -43,12 +43,23 @@ class OrdersController extends Controller
             "param1" => "string",
             "param2" => "string",
             "param3" => "string",
+            "options" => [
+               "callbacks" => [
+                    "result_url" => "string",
+                    "check_url" => "string",
+                    "cancel_url" =>"string",
+                    "success_url" => "string",
+                    "failure_url" => "string",
+                    "back_url"   => "string",
+                    "capture_url" => string" 
+               ]
+            ]
         ]);
     }
 }
 ```
 
-> After completing the request for a new order in the response you will receive the ID that you will need to take in the request below
+> After completing the request for a new order on response you will receive the ID that you will need to insert below there
 ```php
 $id = 'Set the Paybox order ID';
 return Paybox::paymentInfo($id);
