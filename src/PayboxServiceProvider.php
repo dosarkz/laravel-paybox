@@ -9,8 +9,8 @@ class PayboxServiceProvider extends ServiceProvider
     {
         $this->loadConfiguration();
 
-        $this->app->singleton(Paybox::class, function () {
-            return new Paybox(config('paybox'));
+        $this->app->singleton('paybox', function () {
+            return new PayboxService(config('paybox'));
         });
     }
 

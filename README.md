@@ -1,4 +1,4 @@
-# Acquiring system for accepting payments [Paybox.Money 4.0.0](https://paybox.money/docs/ru/pay-in/4.0)
+# Acquiring system for accepting payments [Paybox.Money](https://paybox.money/docs/ru)
 > List of available functional
 - Creating a new payment
 - Receiving information about the payment
@@ -14,9 +14,12 @@
 ## Usage
 > Env file
 ```
+PAYBOX_GATEWAY_URL=https://api.paybox.money
 PAYBOX_MERCHANT_ID=
 PAYBOX_SECRET_KEY=
-PAYBOX_SUCCESS_URL=
+PAYBOX_SALT=your_secret
+PAYBOX_CHECK_URL=
+PAYBOX_RESULT_URL=
 
 ```
 > Generate new order
@@ -30,39 +33,26 @@ class OrdersController extends Controller
         ...
 
         return Paybox::generate([
-            "x_idempotency_key" => 'UUID of order', // required
-            'order' => "my-super",
-            'amount' =>  20, // required
-            "refund_amount" => 0,
-            "currency" => "KZT", // required
-            "description" =>"Description", // required
-            "payment_system"=> "string",
-            "cleared" => true,
-            "expires_at" => "Date", // required
-            "language" => "ru",
-            "param1" => "string",
-            "param2" => "string",
-            "param3" => "string",
-            "options" => [
-               "callbacks" => [
-                    "result_url" => "string",
-                    "check_url" => "string",
-                    "cancel_url" => "string",
-                    "success_url" => "string",
-                    "failure_url" => "string",
-                    "back_url"   => "string",
-                    "capture_url" => "string" 
-               ]
-            ]
+            'pg_order_id' => '',
+            'pg_merchant_id' => '',
+            'pg_amount' => 100,
+            'pg_description' => "Test",
+            'pg_salt' => '',
+            'pg_check_url' =>'',
+            'pg_result_url' => '',
         ]);
     }
 }
 ```
 
-> After completing the request for a new order on response you will receive the ID that you will need to insert below there
+> Get information about payment
 ```php
-$id = 'Set the Paybox order ID';
-return Paybox::paymentInfo($id);
+    return Paybox::paymentInfo([
+            'pg_merchant_id' => '',
+            'pg_payment_id' => '',
+            'pg_order_id' => '',
+            'pg_salt' => ''
+    ]);
 ```
 
 
