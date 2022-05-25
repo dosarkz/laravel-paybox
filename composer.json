@@ -8,7 +8,7 @@
       "email": "ashenov.e@gmail.com"
     }
   ],
-  "version": "0.1.0",
+  "version": "1.0",
   "keywords": ["Laravel", "Paybox"],
   "require": {
     "php": "^7.1.3|^8.0",
