@@ -11,7 +11,8 @@
   "keywords": ["Laravel", "Paybox"],
   "require": {
     "php": "^7.4|^8.0",
-    "ext-curl": "*"
+    "ext-curl": "*",
+    "guzzlehttp/guzzle": "^7.0.1"
   },
   "require-dev": {
     "phpunit/phpunit": "~6.0"
