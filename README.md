@@ -1,4 +1,4 @@
-# Acquiring system for accepting payments [Paybox.Money](https://paybox.money/docs/ru)
+# Acquiring system for accepting payments [Paybox.Money](https://paybox.money/docs/ru) for Laravel >=7
 > List of available functional
 - Creating a new payment
 - Receiving information about the payment
